@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs"; // <--- Import this
+import { ClerkProvider } from "@clerk/nextjs"; // <--- 1. Import this
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,7 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider> {/* <--- Wrap everything in this */}
+    // 2. Wrap the HTML tag with ClerkProvider
+    <ClerkProvider>
       <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
